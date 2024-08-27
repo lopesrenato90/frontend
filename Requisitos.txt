@@ -1,0 +1,42 @@
+Requisitos Funcionais:
+
+Barra de pesquisa:
+
+O sistema deve permitir que o usuário pesquise vídeos e canais digitando palavras-chave.
+A barra de pesquisa deve ser responsiva, exibindo sugestões enquanto o usuário digita.
+Navegação por categorias:
+
+O sistema deve permitir ao usuário navegar por diferentes categorias de conteúdo, como "Início", "Shorts", "Inscrições", "Histórico" e "Explorar".
+Cada categoria deve exibir conteúdo específico relacionado à sua funcionalidade.
+Reprodução de vídeo:
+
+O sistema deve permitir que o usuário clique em um vídeo e o reproduza na mesma página ou em uma nova página.
+Deve ser possível pausar, avançar e retroceder no vídeo.
+Login de usuário:
+
+O sistema deve fornecer uma opção de login para que o usuário possa acessar funcionalidades adicionais, como curtir vídeos e deixar comentários.
+Sugestões de vídeos:
+
+O sistema deve sugerir vídeos com base no histórico de visualizações e interesses do usuário.
+Opção de visualização ao vivo:
+
+O sistema deve permitir que o usuário assista transmissões ao vivo, como indicado na categoria "Ao vivo".
+
+Requisitos Não Funcionais:
+
+Desempenho:
+
+O sistema deve carregar rapidamente as páginas e os vídeos, proporcionando uma experiência de navegação suave.
+Interface de usuário:
+
+A interface deve ser intuitiva, com ícones e menus fáceis de entender e utilizar.
+A paleta de cores e o design devem ser agradáveis, permitindo uma experiência visual confortável, mesmo em modos de exibição noturna ou com baixa luminosidade.
+Compatibilidade:
+
+O sistema deve ser compatível com diferentes dispositivos (desktop, mobile, tablets) e navegadores.
+Segurança:
+
+As informações de login e os dados do usuário devem ser protegidos por criptografia e outras medidas de segurança.
+Acessibilidade:
+
+O sistema deve ser acessível a usuários com diferentes necessidades, oferecendo opções como legendas automáticas em vídeos e suporte a leitores de tela.
