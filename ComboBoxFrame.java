@@ -10,14 +10,15 @@ public class ComboBoxFrame extends JFrame {
 
    // Nomes dos arquivos de imagem
    private static final String[] names = 
-      {"bug1.gif", "bug2.gif", "travelbug.gif", "buganim.gif"};
+      {"bug1.gif", "bug2.gif", "travelbug.gif", "buganim.gif", "5517062.png"};
    
    // Ícones correspondentes aos nomes das imagens
    private final Icon[] icons = { 
       new ImageIcon(getClass().getResource(names[0])),
       new ImageIcon(getClass().getResource(names[1])), 
       new ImageIcon(getClass().getResource(names[2])),
-      new ImageIcon(getClass().getResource(names[3]))};
+      new ImageIcon(getClass().getResource(names[3])),
+      new ImageIcon(getClass().getResource(names[4]))};
 
    // Construtor do ComboBoxFrame adiciona o JComboBox ao JFrame
    public ComboBoxFrame() {
@@ -26,7 +27,7 @@ public class ComboBoxFrame extends JFrame {
 
       // Inicializa o JComboBox com os nomes das imagens
       imagesJComboBox = new JComboBox<>(names); 
-      imagesJComboBox.setMaximumRowCount(3); // Exibe três linhas dentro da caixa
+      imagesJComboBox.setMaximumRowCount(2); // Exibe três linhas dentro da caixa
 
       // Adiciona um ItemListener ao JComboBox
       imagesJComboBox.addItemListener(
