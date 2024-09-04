@@ -1,5 +1,8 @@
 import java.awt.*;
-//import java.awt.event.*;
+import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
 import javax.swing.*;
 
 public class TelaDeLogin extends JFrame
@@ -38,7 +41,26 @@ public class TelaDeLogin extends JFrame
         lblNotificacoes = new JLabel ("Notificações", SwingConstants.CENTER);
         add(lblNotificacoes);
 
-        setSize(200, 200);
+        btnEntrar.addActionListener(
+            new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent event) {
+                    Connection conexao = MySQLConnector.conectar();
+                    String strSqlLogin = "select * from 'db_senac', tbl_senac' where 'email = '" + txtLogin.getText() + "'and' 'senha' ='" + txtSenha.getPassword() + "';'";
+                    Statament stmSqlLogin = conexao.createStatement();
+                    ResultSet rstLogin = stmSqlLogin.executeQuery(strSqlLogin);
+                    try {
+                        rstSqlLogin.next();
+                        stmSqlLogin.close();
+                    } catch (Exception e) {
+                        lblNotificacoes.setText("Não foi possível enconrar o login e/ou senha digitados/informados!  Por favor verifique e tente novamente. Veja o erro: " + e);
+                    }
+                }
+                
+            };
+        );
+
+        setSize(150, 200);
         setVisible(true);
 
         MySQLConnector.conectar();

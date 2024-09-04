@@ -4,9 +4,9 @@ public class MySQLConnector {
     public static Connection conectar() {
         String status = "Nada acontecey ainda...";
         String mysqlHost = "127.0.0.1";
-        String mysqlDB = "db_mysql_connector";
+        String mysqlDB = "db_senac";
         String mysqlUser = "root";
-        String mysqlPassword = "senac@2";
+        String mysqlPassword = "senac@02";
         String mysqlPort = "3306";
         String mysqlUrl = "jdbc:mysql://" + mysqlHost + ":" + mysqlPort + "/" + mysqlDB + "?user=" + mysqlUser + "&password=" + mysqlPassword;
         Connection conn = null;
