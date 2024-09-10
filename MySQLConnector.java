@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class MySQLConnector {
     public static Connection conectar() {
-        String status = "Nada acontecey ainda...";
+        String status = "Nada aconteceu ainda...";
         String mysqlHost = "127.0.0.1";
         String mysqlDB = "db_senac";
         String mysqlUser = "root";
