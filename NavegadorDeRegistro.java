@@ -6,15 +6,23 @@ public class NavegadorDeRegistro extends TelaDePesquisa {
             if(txtPesquisa.getText().equals(txtUsuario) == false) {
             Connection conexao = MySQLConnector.conectar();
             String strSqlPesquisa = "select * from `db_senac`.`tbl_senac` where `nome` like '%" + txtPesquisa.getText() + "%' or `email` like '%" + txtPesquisa.getText() + "%';";
-            Statement stmSqlPesquisa = conexao.createStatement();
+            Statement stmSqlPesquisa = conexao.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rstSqlPesquisa = stmSqlPesquisa.executeQuery(strSqlPesquisa);
             if (rstSqlPesquisa.next()) {
-                lblNotificacoes.setText(setHtmlFormat("Legal! Foi(Foram) encontrado(s) resultado(s)."));
+                rstSqlPesquisa.last();
+                int rowNumbers = rstSqlPesquisa.getRow();
+                rstSqlPesquisa.first();
+
+                lblNotificacoes.setText(setHtmlFormat("Legal! Foi(Foram) encontrado(s) resultado(s)." + rowNumbers + "resultados(s)"));
                 txtId.setText(rstSqlPesquisa.getString("id"));
                 txtNome.setText(rstSqlPesquisa.getString("nome"));
                 txtEmail.setText(rstSqlPesquisa.getString("email"));
                 txtUsuario = txtPesquisa.getText();
                 btnPesquisar.setEnabled(false);
+                if (rowNumbers > 1) {
+                    btnProximo.setEnabled(true);
+                    btnUltimo.setEnabled(true);
+                }
             } else {
                 lblNotificacoes.setText(setHtmlFormat("Poxa vida! Não foram encontrados resultados para: \"" + txtPesquisa.getText() + "\"."));
                 }

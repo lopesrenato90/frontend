@@ -125,10 +125,14 @@ public class TelaDePesquisa extends JFrame {
         txtPesquisa.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
-                if (txtPesquisa.getText().trim().equals(txtUsuario) == false) {
+                if (txtPesquisa.getText().trim().equals(txtUsuario) == false && txtPesquisa.getText().trim().length() > 0) {
                     btnPesquisar.setEnabled(true);    
                 } else {
                     btnPesquisar.setEnabled(false);
+                }
+                //System.out.println(e.getKeyCode());
+                if (e.getKeyCode() == 10) {
+                    NavegadorDeRegistro.pesquisar();
                 }
             }
         });
